@@ -46,7 +46,7 @@ public class User extends PanacheEntityBase {
 public Long id;
 
 
-@
+
 @Email
 @Column(name = "email", length = 60, nullable = false)
 public String email;
