@@ -31,13 +31,13 @@ import org.acme.reactive.crud.domain.User;
 @Path("users")
 public class UserResource {
 
-@GET
-@RolesAllowed("user")
-@Path("/me")
-@Produces(MediaType.TEXT_PLAIN)
-public String me(@Context SecurityContext securityContext) {
-    return securityContext.getUserPrincipal().getName();
-}
+    @GET
+    @RolesAllowed("user")
+    @Path("/me")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String me(@Context SecurityContext securityContext) {
+        return securityContext.getUserPrincipal().getName();
+    }
 
 
 }
