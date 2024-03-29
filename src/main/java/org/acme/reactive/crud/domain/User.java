@@ -16,22 +16,24 @@
 
 package org.acme.reactive.crud.domain;
 
-import io.smallrye.mutiny.Multi;
-import io.smallrye.mutiny.Uni;
-import io.quarkus.hibernate.reactive.panache.PanacheEntity;
-import io.quarkus.hibernate.reactive.panache.PanacheEntityBase;
-import io.smallrye.mutiny.Uni;
+import io.quarkus.cache.CacheResult;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+import io.quarkus.panache.common.Page;
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.*;
-
-import io.quarkus.elytron.security.common.BcryptUtil;
-import io.quarkus.security.jpa.Password;
-import io.quarkus.security.jpa.Roles;
-import io.quarkus.security.jpa.UserDefinition;
-import io.quarkus.security.jpa.Username;
-
-import javax.json.bind.annotation.JsonbTransient;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+import java.io.Serializable;
+import java.time.Instant;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+import org.hibernate.annotations.BatchSize;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 import java.time.Instant;
 
 @Entity
@@ -44,7 +46,8 @@ public class User extends PanacheEntityBase {
 public Long id;
 
 
-@NotNull
+@
+@Email
 @Column(name = "email", length = 60, nullable = false)
 public String email;
 
@@ -57,8 +60,7 @@ public String password;
 public Instant createdDate = Instant.now();
 
 
-@Roles
-public String role;
+
 
 
 }

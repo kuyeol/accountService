@@ -4,14 +4,8 @@ package org.acme.reactive.crud.domain;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import io.quarkus.runtime.annotations.RegisterForReflection;
 import jakarta.persistence.*;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import java.io.Serializable;
-import java.util.Objects;
 
 /**
  * An authority (a security role).
@@ -19,32 +13,28 @@ import java.util.Objects;
 @Entity
 @Table(name = "authority")
 @Cacheable
+
 @RegisterForReflection
 public class Authority extends PanacheEntityBase {
 
 
+    @Id
+    @NotNull
+    @Size(max = 50)
+    @Column(length = 50)
+    public String name;
 
-@NotNull
-@Size(max = 50)
-@Id
-@Column(length = 50)
-public String name;
+    public Authority() {
+        //empty
+    }
 
-public Authority() {
-    //empty
-}
-
-public Authority(String name) {
-    //for jsonb
-    this.name = name;
-}
-
+    public Authority(String name) {
+        //for jsonb
+        this.name = name;
+    }
 
 
-@Override
-public int hashCode() {
-    return Objects.hashCode(name);
-}
+
 
 
 }

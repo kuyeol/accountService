@@ -5,8 +5,4 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/gen" isTestSource="false" generated="true" />
     </content>
   </component>
-  <component name="Quarkus Tools">
-    <option name="hash" value="83185356" />
-    <option name="version" value="1" />
-  </component>
 </module>
