@@ -39,11 +39,5 @@ public String me(@Context SecurityContext securityContext) {
     return securityContext.getUserPrincipal().getName();
 }
 
-@WithTransaction
-@POST
-//@RolesAllowed("admin")
-public Uni<User> create(User user) {
-    return User.add(user);
-}
 
 }
