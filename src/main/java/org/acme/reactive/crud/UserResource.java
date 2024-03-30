@@ -16,7 +16,7 @@
 
 package org.acme.reactive.crud;
 
-import io.quarkus.hibernate.reactive.panache.common.WithTransaction;
+
 import io.smallrye.mutiny.Uni;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.ws.rs.GET;
@@ -28,6 +28,8 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.SecurityContext;
 import org.acme.reactive.crud.domain.User;
 
+
+//todo 투두사용해보기
 @Path("users")
 public class UserResource {
 
