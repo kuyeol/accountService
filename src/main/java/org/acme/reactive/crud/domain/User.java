@@ -62,7 +62,7 @@ public class User extends PanacheEntityBase {
     public String login;
 
     @Email
-    @Column(name = "email", length = 60, nullable = false)
+    @Column(name = "email", nullable = false, unique = true, length = 60)
     public String email;
 
 
@@ -81,6 +81,10 @@ public class User extends PanacheEntityBase {
     @BatchSize(size = 20)
     @JsonbTransient
     public Set<Authority> authorities = new HashSet<>();
+
+    public String getEmail() {
+        return email;
+    }
 
 
     public Uni<User> findByEmail(String email) {
