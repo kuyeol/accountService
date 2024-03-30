@@ -37,19 +37,19 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 
 ## License
 
-[CC0 1.0 (Public Domain)](LICENSE.md)
+[CC0 1.01 (Public Domain)](LICENSE.md)
 
 ## License5
 
-[CC0 1.0 (Public Domain)](LICENSE.md)
+[CC0 1.0 3(Public Domain)](LICENSE2.md)
 
 ## License4
 
-[CC0 1.0 (Public Domain)](LICENSE.md)
+[CC0 1.04 (Public Domain)](LICENSE1.md)
 
 ## License3
 
-[CC0 1.0 (Public Domain)](LICENSE.md)
+[CC0 1.02 (Public Domain)](LICENSE.md)
 
 ## License2
 
